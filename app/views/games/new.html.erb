@@ -2,3 +2,12 @@
 <% @letters.each do |letter| %>
 <%= letter %>
 <% end %>
+<br>
+<br>
+<form action="/score" method="post" data-turbo="false">
+<label for="ask-word">What is the longest word you can find?</label>
+<input type="text" name="word" id="ask-word" placeholder="enter your word here">
+<input type="submit" value="Play">
+<%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+<%= hidden_field_tag :initial_letters, @letters %>
+</form>

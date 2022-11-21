@@ -1,0 +1,13 @@
+<h1>Result</h1>
+ <%# opt %>
+<% if @opt.include? false %>
+<p>Sorry but <%= params[:word] %> can't be built out of <%= @letters%></p>
+<% end %>
+
+<% if @opt.exclude? false && @words["found"] %>
+<%= "Congratulations! #{params[:word]} is a valid english word" %>
+<% elsif @opt.exclude? false && @words["found"] == false %>
+<%= "Sorry but #{params[:word]} does not seem to be a valid english word!" %>
+<% end %>
+
+<%# all? %>
